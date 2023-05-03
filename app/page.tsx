@@ -149,24 +149,32 @@ export default function Home() {
     },
   };
   return (
-    <main className="h-full bg-pale-blue grid lg:place-content-center">
-      <div className="bg-white grid lg:grid-cols-2 lg:rounded-[32px] overflow-hidden">
-        <div className="text-center bg-gradient-to-b from-light-slate-blue to-light-royal-blue rounded-b-[32px] pt-6 pb-10 grid place-content-center gap-y-6 px-14">
-          <h1 className="text-light-lavender font-bold">Your Result</h1>
-          <div className="grid place-content-center bg-gradient-to-b from-violet-blue rounded-full w-[140px] mx-auto aspect-square">
-            <p className="text-5xl/[4rem] font-extrabold text-white">76</p>
-            <p className="text-light-lavender font-bold text-base/5">of 100</p>
+    <main className="bg-pale-blue grid lg:h-screen lg:place-content-center">
+      <div className="bg-white grid lg:grid-cols-2 lg:rounded-4xl overflow-hidden lg:max-w-[46rem]">
+        <div className="text-center bg-gradient-to-b from-light-slate-blue to-light-royal-blue rounded-b-4xl pt-6 pb-10 grid gap-y-6 px-14 lg:rounded-tr-4xl justify-center lg:gap-y-8 lg:py-10.5">
+          <h1 className="text-light-lavender font-bold text-2xl">
+            Your Result
+          </h1>
+          <div className="grid place-content-center bg-gradient-to-b from-violet-blue rounded-full w-[140px] mx-auto aspect-square lg:w-[200px]">
+            <p className="text-5xl/[4rem] font-extrabold text-white lg:text-7xl">
+              76
+            </p>
+            <p className="text-light-lavender font-bold text-base/5 lg:text-lg/6">
+              of 100
+            </p>
           </div>
           <div>
-            <p className="text-white mb-2 font-bold text-2xl">Great</p>
-            <p className="text-light-lavender font-medium text-base/5">
+            <p className="text-white mb-2 font-bold text-2xl lg:text-[2rem]/[2.625rem] lg:mb-3">
+              Great
+            </p>
+            <p className="text-light-lavender font-medium text-base/5 lg:text-lg/6">
               Your performance exceed 65% of the people conducting the test
               here!
             </p>
           </div>
         </div>
-        <div className="grid py-6 px-8 gap-y-6">
-          <h2 className="text-dark-gray-blue font-bold">Summary</h2>
+        <div className="grid py-6 px-8 gap-y-6 lg:px-10 lg:py-10.5">
+          <h2 className="text-dark-gray-blue font-bold text-2xl">Summary</h2>
           <div className="grid gap-y-4">
             {summaryData.map((item) => (
               <div
@@ -190,7 +198,7 @@ export default function Home() {
           </div>
           <button
             type="button"
-            className="bg-dark-gray-blue rounded-full text-white py-4 font-bold"
+            className="bg-dark-gray-blue rounded-full text-white py-4 font-bold text-lg/6 hover:bg-gradient-to-b hover:from-light-slate-blue hover:to-light-royal-blue"
           >
             <span>Continue</span>
           </button>

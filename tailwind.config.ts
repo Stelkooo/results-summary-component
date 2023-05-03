@@ -21,6 +21,12 @@ export default {
         'light-lavender': 'hsl(241, 100%, 89%)',
         'dark-gray-blue': 'hsl(224, 30%, 27%)',
       },
+      borderRadius: {
+        '4xl': '2rem',
+      },
+      padding: {
+        '10.5': '2.625rem',
+      },
     },
   },
   plugins: [],
