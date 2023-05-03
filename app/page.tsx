@@ -176,11 +176,13 @@ export default function Home() {
         <div className="grid py-6 px-8 gap-y-6 lg:px-10 lg:py-10.5">
           <h2 className="text-dark-gray-blue font-bold text-2xl">Summary</h2>
           <div className="grid gap-y-4">
-            {summaryData.map((item) => (
+            {summaryData.map((item, index) => (
               <div
                 className={`${
                   styleConfig[item.color].bg
                 } p-4 rounded-2xl bg-opacity-5 flex justify-between`}
+                // eslint-disable-next-line react/no-array-index-key
+                key={index}
               >
                 <div className="flex gap-3 items-center">
                   <div className={`${styleConfig[item.color].stroke}`}>
