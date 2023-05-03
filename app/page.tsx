@@ -1,3 +1,8 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import Counter from '@/components/counter/counter.component';
+
 type SummaryHeading = 'Reaction' | 'Memory' | 'Verbal' | 'Visual';
 
 type Colors = 'light-red' | 'orange-yellow' | 'green-teal' | 'cobalt-blue';
@@ -150,14 +155,19 @@ export default function Home() {
   };
   return (
     <main className="bg-pale-blue grid lg:h-screen lg:place-content-center">
-      <div className="bg-white grid lg:grid-cols-2 lg:rounded-4xl overflow-hidden lg:max-w-[46rem]">
+      <motion.div
+        className="bg-white grid lg:grid-cols-2 lg:rounded-4xl overflow-hidden lg:max-w-[46rem] shadow-xl"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="text-center bg-gradient-to-b from-light-slate-blue to-light-royal-blue rounded-b-4xl pt-6 pb-10 grid gap-y-6 px-14 lg:rounded-tr-4xl justify-center lg:gap-y-8 lg:py-10.5">
           <h1 className="text-light-lavender font-bold text-2xl">
             Your Result
           </h1>
           <div className="grid place-content-center bg-gradient-to-b from-violet-blue rounded-full w-[140px] mx-auto aspect-square lg:w-[200px]">
             <p className="text-5xl/[4rem] font-extrabold text-white lg:text-7xl">
-              76
+              <Counter from={0} to={76} />
             </p>
             <p className="text-light-lavender font-bold text-base/5 lg:text-lg/6">
               of 100
@@ -198,14 +208,16 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <button
+          <motion.button
             type="button"
-            className="bg-dark-gray-blue rounded-full text-white py-4 font-bold text-lg/6 hover:bg-gradient-to-b hover:from-light-slate-blue hover:to-light-royal-blue"
+            className="bg-dark-gray-blue rounded-full text-white py-4 font-bold text-lg/6 hover:bg-gradient-to-b hover:from-light-slate-blue hover:to-light-royal-blue transition-colors"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             <span>Continue</span>
-          </button>
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
     </main>
   );
 }
